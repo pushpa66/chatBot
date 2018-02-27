@@ -21,7 +21,7 @@ $jsonData = '{
         "id":"' . $sender . '"
     }, 
     "message":{
-        "text":"The message you want to return"
+        "text":"It works bro..."
     }
 }';
 //Tell cURL that we want to send a POST request.
