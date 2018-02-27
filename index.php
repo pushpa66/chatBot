@@ -15,15 +15,36 @@ $message = $input['entry'][0]['messaging'][0]['message']['text'];
 $url = "https://graph.facebook.com/v2.6/me/messages?access_token=$accessToken";
 //Initiate cURL.
 $ch = curl_init($url);
-//The JSON data.
-$jsonData = '{
-    "recipient":{
-        "id":"' . $sender . '"
-    }, 
-    "message":{
-        "text":"It works bro..."
-    }
-}';
+
+//$message_type = "text";
+$message_type = "image";
+
+if ($message_type == "text"){
+    $jsonData = '{
+        "recipient":{
+            "id":"' . $sender . '"
+        }, 
+        "message":{
+            "text":"It works bro..."
+        }
+    }';
+} else if ($message_type == "image"){
+    $jsonData = '{
+        "recipient":{
+            "id":"' . $sender . '"
+        }, 
+        "message":{
+            "attachment":{
+                "type" : "image",
+                "payload":{
+                    "url" : "https://www.google.lk/search?q=husky+puppies&rlz=1C1CHBF_enLK733LK733&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj0z5n3uMbZAhXBnJQKHWyQD-cQ_AUICigB&biw=1242&bih=560#imgrc=WMj4_BuaFNSueM:",
+                    "is_reusable" : true
+                }
+            }
+        }
+    }';
+}
+
 //Tell cURL that we want to send a POST request.
 curl_setopt($ch, CURLOPT_POST, 1);
 //Attach our encoded JSON string to the POST fields.
