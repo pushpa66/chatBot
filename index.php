@@ -1,4 +1,5 @@
 <?php
+$accessToken = "EAAc1rZCVCsX0BAAiIWUfZAoCPg9LwEQJAbkJpH5Veov4ZAjbUjqUZAri4ZCxTao1BEIa5ZA4XtH6NZBxOZBAu8ZCFQD1TfkZCCbHkC6aTASmNyXI6j4wqaaoUdKg58k6rWTkU88dCvHkjsECKwVc70bEXzBlAFEhMgRXUa01G6Sa07Kp4YVrAFiJyh";
 $challenge = $_REQUEST['hub_challenge'];
 $verify_token = $_REQUEST['hub_verify_token'];
 // Set this Verify Token Value on your Facebook App
@@ -11,7 +12,7 @@ $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
 // Get the returned message
 $message = $input['entry'][0]['messaging'][0]['message']['text'];
 //API Url and Access Token, generate this token value on your Facebook App Page
-$url = 'https://graph.facebook.com/v2.6/me/messages?access_token=<ACCESS-TOKEN-VALUE>';
+$url = "https://graph.facebook.com/v2.6/me/messages?access_token=$accessToken";
 //Initiate cURL.
 $ch = curl_init($url);
 //The JSON data.
