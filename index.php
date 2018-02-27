@@ -37,7 +37,7 @@ if ($message_type == "text"){
             "attachment":{
                 "type" : "image",
                 "payload":{
-                    "url" : "https://www.google.lk/search?q=husky+puppies&rlz=1C1CHBF_enLK733LK733&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj0z5n3uMbZAhXBnJQKHWyQD-cQ_AUICigB&biw=1242&bih=560#imgrc=WMj4_BuaFNSueM:",
+                    "url" : "http://www.dogster.com/wp-content/uploads/2015/05/husky-puppies-06.jpg",
                     "is_reusable" : true
                 }
             }
